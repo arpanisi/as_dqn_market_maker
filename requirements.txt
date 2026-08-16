@@ -1,0 +1,7 @@
+numpy
+pandas
+PyYAML
+pytest
+torch
+cma
+websocket-client

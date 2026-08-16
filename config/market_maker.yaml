@@ -1,0 +1,51 @@
+instrument:
+  symbol: BTCUSDT
+  category: linear
+
+market:
+  tick_size: 0.10
+  fixed_quote_size_btc: 0.01
+  tier1_risk_aversion: 0.00001
+  tier1_gamma_derivation:
+    target_spread_fraction: 0.005
+    observed_mid_price: 60822.9
+    observed_annualized_sigma: 2.2616318109355067
+    observed_time_remaining_years: 0.00006421232876712328
+    leading_order_gamma_for_50bps: 0.00025028835983970235
+    selected_gamma: 0.00001
+    note: selected below leading-order value because the full spread includes the log arrival-intensity term; with kappa floor enforced this produces a 34bps max spread on the Tier 1 real-data run.
+
+time:
+  hours_per_year: 8760
+
+intensity:
+  kappa_floor: 0.01
+
+baseline:
+  gamma_min: 0.001
+  gamma_max: 10.0
+  skew_min: -0.1
+  skew_max: 0.1
+  population_size: 16
+  generations: 200
+
+agent:
+  risk_aversions: [0.01, 0.1, 0.2, 0.9]
+  skews: [-0.1, -0.05, 0.0, 0.05, 0.1]
+  hidden_units: 128
+  learning_rate: 0.0001
+  batch_size: 64
+  discount_beta: 0.99
+  replay_capacity: 100000
+  warmup_transitions: 10000
+  target_sync_steps: 1000
+  epsilon_start: 1.0
+  epsilon_end: 0.05
+  epsilon_decay_fraction: 0.2
+
+evaluation:
+  reference_capital: 100000.0
+
+funding_arbitrage:
+  n_arb: 50000.0
+  f_min: 0.0001

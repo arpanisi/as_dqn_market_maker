@@ -1,0 +1,8 @@
+description: "Reinforcement learning for adaptive market making, tuning risk-aversion and skew for an Avellaneda-Stoikov model against Bybit BTCUSDT order-book data."
+topics:
+  - avellaneda-stoikov
+  - bybit
+  - cma-es
+  - double-dqn
+  - market-making
+  - reinforcement-learning
