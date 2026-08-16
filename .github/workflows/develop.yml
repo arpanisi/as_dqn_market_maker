@@ -10,6 +10,8 @@ jobs:
   fast-tier:
     name: Lint & Fast Tests
     runs-on: ubuntu-latest
+    env:
+      COINALYZE_API_KEY: ci-mock-key
 
     steps:
       - name: Checkout code

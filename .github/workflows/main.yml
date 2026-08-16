@@ -10,6 +10,8 @@ jobs:
   full-tier:
     name: Lint & Full Test Suite
     runs-on: ubuntu-latest
+    env:
+      COINALYZE_API_KEY: ci-mock-key
 
     steps:
       - name: Checkout code
