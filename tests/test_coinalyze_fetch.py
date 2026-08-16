@@ -113,6 +113,7 @@ def test_fetch_tier1_bybit_data_defaults_to_coinalyze_funding(monkeypatch, tmp_p
 
     monkeypatch.setattr("data_pipeline.bybit_fetch._download_trade_archive", fake_download)
     monkeypatch.setattr(coinalyze_fetch, "_http_get", fake_http_get)
+    monkeypatch.setenv("COINALYZE_API_KEY", "test-key")
 
     result = fetch_tier1_bybit_data(
         start="2026-07-01T00:00:00Z",
